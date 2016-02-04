@@ -16,7 +16,7 @@ var app = app || {};
         }
     };
 
-    //To easy select something form the DOM
+    //To easily select something from the DOM
     app.select = {
         one: function (selector) {
             return document.querySelector(selector);
@@ -33,7 +33,7 @@ var app = app || {};
             this.hashchange();
         },
         load: function () {
-            //if the window is loaded run app.sectons.toggle
+            //if the window is loaded run app.sections.toggle
             window.addEventListener("load", function () {
                 app.sections.toggle(location.hash)
             }, false);
@@ -63,8 +63,7 @@ var app = app || {};
         },
         hideall: function (sections) {
             //hide all sections
-            var s = 0;
-            for (s; s < sections.length; s++) {
+            for (var s = 0; s < sections.length; s++) {
                 sections[s].classList.add("disabled")
             }
         }
@@ -105,7 +104,7 @@ var app = app || {};
     //        }
     //    }
 
-    // check of all functions are supported, if not, show a error message on op of the app.
+    // check if all functions are supported, if not, show an error message at top of the app.
     app.support = {
         init: function () {
             this.onhashchange()
