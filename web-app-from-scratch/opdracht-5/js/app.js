@@ -1,12 +1,12 @@
-//Maakt de variable app aanmaken als globaal object. En als er al een varianle app bestaat voegd hij de app var toe. Dit voorkomt conflicten met andere libary's
+//Maakt de variable app als globaal object aan. En als er al een variabele app bestaat voegt hij de app var toe. Dit voorkomt conflicten met andere libary's.
 var app = app || {};
 
 // use IIFE to avoid global vars
 (function () {
     "use strict"
 
-    //start all funtions
-    app.start = { //litteral opbject
+    //start all functions
+    app.start = { //literal opbject
         init: function () { //start object in this object are all start functions
 
             // run the function app.routes.init.
@@ -16,7 +16,7 @@ var app = app || {};
         }
     };
 
-    //To easy select something form the DOM
+    //To easily select something from the DOM
     app.select = {
         one: function (selector) {
             return document.querySelector(selector);
@@ -33,13 +33,13 @@ var app = app || {};
             this.hashchange();
         },
         load: function () {
-            //if the window is loaded run app.sectons.toggle
+            //if the window is loaded, run app.sections.toggle
             window.addEventListener("load", function () {
                 app.sections.toggle(location.hash)
             }, false);
         },
         hashchange: function () {
-            //if the hash changes run app.sectons.toggle
+            //if the hash changes, run app.sections.toggle
             window.addEventListener("hashchange", function () {
                 app.sections.toggle(location.hash)
             }, false);
